@@ -1,56 +1,113 @@
 <template>
-  <div class="hello">
-  <div>
-    <div>
-      <input type="text" v-model="zh">
+  <div class="app">
+    <div class="header">
+      <img src="../assets/login.png" alt class="logo" />
+      <div class="login">
+        <div class="icon">
+          <i class="el-icon-user"></i>
+        </div>
+        <h2>领课教育系统-开源版</h2>
+        <div class="as">
+          <i class="el-icon-user"></i>
+          <input type="text" name id />
+        </div>
+        <div class="pass">
+          <i class="el-icon-user"></i>
+          <input type="text" name id />
+        </div>
+        <div class="login1">登录</div>
+      </div>
     </div>
-    <div>
-    <input type="password" v-model="pass" >
-    </div>
-    <button @click="login"> 提交</button>
-  </div>
+    <section>
+      <router-view></router-view>
+    </section>
   </div>
 </template>
 
+
 <script>
-import axios from "axios";
 export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      zh:'',
-      pass:''
+  data() {
+    return {};
+  }
+};
+</script>
+<style lang="scss">
+.app {
+  background: #93defe;
+  width: 100%;
+  height: 100%;
+  .logo {
+    float: left;
+    position: fixed;
+    left: 200px;
+    top: 150px;
+  }
+  .login {
+    width: 460px;
+    height: 430px;
+    background: #fff;
+    border-radius: 10px;
+    float: right;
+    margin-right: 240px;
+    margin-top: 150px;
+    position: relative;
+    .icon {
+      position: absolute;
+      width: 124px;
+      height: 124px;
+      border-radius: 50%;
+      border: 5px solid #93defe;
+      background: #fff;
+      margin-top: -60px;
+      margin-left: 36%;
+      text-align: center;
+      i {
+        font-size: 70px;
+        line-height: 120px;
+        color: #91ddfe;
+      }
     }
-  },
-  methods:{
-    login(){
-      console.log("111")
-      axios.post('http://www.wyunfei.com:8002/apis/user/pc/api/user/login/password',{
-        mobile:this.zh,
-        password:this.pass,
-       clientId:"lkb65617f842ad4c37895a733b8de43cbb"
-      }).then(d=>{
-        console.log(d)
-      })
+    h2 {
+      text-align: center;
+      margin-top: 110px;
+      color: #3d3f40;
+      font-size: 30px;
     }
   }
 }
-</script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
+.as {
+  width: 80%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid darkgray;
+  margin-top: 20px;
+  background: #ccc;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+.pass {
+  width: 80%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid darkgray;
+  background: #ccc;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+.login1 {
+  width: 80%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  background: #409eff;
+  border-radius: 5px;
 }
-a {
-  color: #42b983;
+input{
+    list-style: none;
+    border: none;
+    outline: none;
+    background: #ccc;
 }
 </style>
