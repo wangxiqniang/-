@@ -4,7 +4,10 @@ Vue.use(Vuex)
 
 const store=new Vuex.Store({
 	state:{
-		count:0
+		list:[]
+	},
+	mutations:{
+		
 	}
 })
 export default store
