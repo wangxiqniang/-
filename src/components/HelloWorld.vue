@@ -16,6 +16,10 @@
           <input type="text" name id />
         </div>
         <div class="login1">登录</div>
+		<div>845742
+		54
+		45
+		</div>
       </div>
     </div>
     <section>
