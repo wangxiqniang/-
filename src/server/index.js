@@ -1,12 +1,12 @@
 import HTTP from '../utils/http.js'
 const _http = new HTTP()
 class Product {
-    user() {
+    list(data) {
         return _http.request({
             type: 'post',
-            url: '',
+            url: '/apis/system/pc/menu/user/button/list',
             data: {
-
+                token:data.token
             }
         })
     }

@@ -9,17 +9,13 @@
         <h2>领课教育系统-开源版</h2>
         <div class="as">
           <i class="el-icon-user"></i>
-          <input type="text" name id />
+          <input type="text" v-model="zh"/>
         </div>
         <div class="pass">
           <i class="el-icon-user"></i>
-          <input type="text" name id />
+          <input type="password" v-model="pass" />
         </div>
-        <div class="login1">登录</div>
-		<div>845742
-		54
-		45
-		</div>
+        <div class="login1" @click="login">登录</div>
       </div>
     </div>
     <section>
@@ -30,9 +26,31 @@
 
 
 <script>
+import axios from "axios";
+import stor from '../localestoring/local.js'
 export default {
   data() {
-    return {};
+    return {
+        zh:"",
+        pass:''
+    };
+  },
+   methods:{
+    login(){
+      console.log("111")
+      axios.post('http://www.wyunfei.com:8002/apis/user/pc/api/user/login/password',{
+        mobile:this.zh,
+        password:this.pass,
+       clientId:"lkb65617f842ad4c37895a733b8de43cbb"
+      }).then(d=>{
+          stor.set('token',JSON.stringify(d.data.data))
+        console.log(d)
+        if (d.data.code == 200) {
+            this.$router.push({path:'/login'})
+        }
+
+      })
+    }
   }
 };
 </script>
@@ -113,5 +131,6 @@ input{
     border: none;
     outline: none;
     background: #ccc;
+    width: 80%;
 }
 </style>

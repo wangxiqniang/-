@@ -7,10 +7,10 @@ class HTTP {
 			Axios({
 				method: params.type,
 				url: config.baseUrl + params.url,
-				data: Qs.stringify(params.data)
-				// headers: {
-				// Authorization: params.data.token
-				// },
+				data: Qs.stringify(params.data),
+				headers: {
+					Authorization: params.data.token,
+				},
 				
 			}).then(res => {
 				resolve(res)
