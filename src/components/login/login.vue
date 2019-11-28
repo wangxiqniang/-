@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-  <div class>123</div>
+  <div class>亲炙而发愁挖而非求挖坟去潍坊</div>
 </template>
 
 <script>
