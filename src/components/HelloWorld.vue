@@ -16,6 +16,10 @@
           <input type="password" v-model="pass" />
         </div>
         <div class="login1" @click="login">登录</div>
+		<div>5316
+		6
+		26
+		2</div>
       </div>
     </div>
     <section>

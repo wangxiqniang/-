@@ -16,18 +16,14 @@ export default {
   created() {
     let list = JSON.parse(stor.get("token"));
     if (list) {
-    //   console.log(list.token);
+    
       let obj = {
         token: list.token
       };
+	  console.log(obj.token)
       _http.list(obj).then(d => {
         console.log(d.data);
       });
-      //       axios.post('http://www.wyunfei.com:8002/apis/system/pc/menu/user/button/list',{
-      //       token:list.token
-      //   }).then(d=>{
-      //       console.log(d)
-      //   })
     }
   }
 };
