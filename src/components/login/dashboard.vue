@@ -11,7 +11,7 @@
 						</template>
 
 					<!-- 	<el-menu-item index="1-3" v-for="v in item.children">{{v.name}}</el-menu-item> -->
-						 <el-submenu index="1-1" v-for="v in item.children">
+						 <el-submenu :index="v.id" v-for="v in item.children">
 						      <span slot="title">{{v.name}}</span>
 						      <el-menu-item index="1-2-1" v-for=" t in v.children">{{t.name}}</el-menu-item>
 						    </el-submenu>
