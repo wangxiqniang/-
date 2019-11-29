@@ -1,8 +1,7 @@
 <!--  -->
 <template>
 <div class=''>
-      <p>首页管理《站点管理 《bottom</p>
-website/websiteNav
+    底部导航
 </div>
 </template>
 

@@ -1,21 +1,26 @@
 <!--  -->
 <template>
-	<div>
+	<div class="hello_left">
 		<el-container>
 			<!-- 左侧 -->
 			<el-aside style="width: -;height: -;">
-				<el-menu default-active="1-3-1" class="el-menu-vertical-demo"    :collapse="isCollapse" background-color="#545c64" unique-opene>
-					<el-submenu :index="item.id" v-for="item in list"  >
-						<template slot="title">
-							<span slot="title">{{item.name}}</span>
-						</template>
-
-					<!-- 	<el-menu-item index="1-3" v-for="v in item.children">{{v.name}}</el-menu-item> -->
-						 <el-submenu :index="v.id" v-for="v in item.children">
-						      <span slot="title">{{v.name}}</span>
-						      <el-menu-item index="1-2-1" v-for=" t in v.children">{{t.name}}</el-menu-item>
-						    </el-submenu>
-					</el-submenu>
+				<el-menu default-active="1-4-1" class="el-menu-vertical-demo" :collapse="isCollapse" router >
+					<template v-for="item in list">
+						<el-submenu :index="item.id" v-if="item.name != '首页'">
+							<template slot="title">
+								<span slot="title">{{ item.name }}</span>
+							</template>
+							<el-menu-item-group v-for="v in item.children">
+								<el-menu-item :index="v.path" v-if="v.children.length<=0">{{v.name}}</el-menu-item>
+							</el-menu-item-group>
+							<el-submenu :index="v.path" v-for="v in item.children">
+								<span slot="title">{{v.name}}</span>
+								<el-menu-item :index="y.path" v-for="y in v.children" v-if="v.children.length>0" >{{y.name}}</el-menu-item>
+							</el-submenu>
+						</el-submenu>
+						
+					</template>
+				
 				</el-menu>
 			</el-aside>
 			<el-container>
@@ -23,9 +28,12 @@
 					<div @click="isCollapse = !isCollapse">三</div>
 					<div class="dash_img"><img src="../../assets/login.png" alt="" /></div>
 				</el-header>
-				<el-main>Main</el-main>
+				<el-main>
+					<router-view></router-view>
+				</el-main>
 			</el-container>
 		</el-container>
+			
 	</div>
 </template>
 
@@ -38,7 +46,7 @@ export default {
 	data() {
 		return {
 			isCollapse: true,
-			list:[]
+			list: []
 		};
 	},
 	methods: {},
@@ -62,7 +70,7 @@ export default {
 			};
 			_http.right(obj).then(d => {
 				console.log(d.data.data.sysMenu);
-				this.list=d.data.data.sysMenu
+				this.list = d.data.data.sysMenu;
 			});
 		}
 	},
@@ -70,6 +78,10 @@ export default {
 };
 </script>
 <style scoped lang="scss">
+.hello_left {
+	width: 100%;
+	height: 100%;
+}
 .dash_img {
 	img {
 		width: 30px;
@@ -78,6 +90,7 @@ export default {
 }
 .el-container {
 	width: 100%;
+	min-height: 100%;
 }
 .el-header {
 	background: white;
@@ -88,5 +101,8 @@ export default {
 .el-menu-vertical-demo:not(.el-menu--collapse) {
 	width: 200px;
 	min-height: 970px;
+}
+.el-container ul {
+	min-height: 100%;
 }
 </style>

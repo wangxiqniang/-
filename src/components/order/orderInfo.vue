@@ -1,8 +1,9 @@
 <!--  -->
 <template>
 <div class=''>
-    <p>订单管理《订单列表</p>
-orderInfo
+   <div>
+	  订单列表
+   </div>
 </div>
 </template>
 

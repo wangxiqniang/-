@@ -1,8 +1,7 @@
 <!--  -->
 <template>
 <div class=''>
-   <p>课程管理《分类管理《分类列表</p>
-category
+   列表分类
 </div>
 </template>
 

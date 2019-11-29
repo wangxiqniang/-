@@ -1,8 +1,7 @@
 <!--  -->
 <template>
 <div class=''>
-    <p>首页管理《站点管理《友情链接</p>
-website/websiteLink
+  友情链接
 </div>
 </template>
 

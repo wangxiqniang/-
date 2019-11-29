@@ -1,37 +1,23 @@
 <!--  -->
 <template>
-<div class=''>
-    <p>首页管理《首页轮播《pc端设置</p>
-pc
-</div>
+	<div class="">
+	PC端设置
+	</div>
 </template>
 
 <script>
-
-import HTTP from '../../server/index.js' 
-const _http = new HTTP()
-import stor from '../../localestoring/local.js'
-import axios from "axios";
+import HTTP from '../../server/index.js';
+const _http = new HTTP();
+import stor from '../../localestoring/local.js';
+import axios from 'axios';
 export default {
-data() {
-return {
-
+	data() {
+		return {};
+	},
+	methods: {},
+	components: {},
+	computed: {},
+	created() {}
 };
-},
-methods: {
-
-},
-components: {
-
-},
-computed: {
-
-},
-created() {
-
-},
-}
 </script>
-<style  scoped>
-
-</style>
+<style scoped></style>

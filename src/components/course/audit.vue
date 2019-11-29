@@ -1,8 +1,7 @@
 <!--  -->
 <template>
 <div class=''>
-  <p>课程管理《课程管理《课程审核</p>
-audit
+ 课程审核列表
 </div>
 </template>
 

@@ -1,8 +1,7 @@
 <!--  -->
 <template>
 <div class=''>
-    <p>课程管理《课程管理《课程列表</p>
-course
+  课程列表
 </div>
 </template>
 
