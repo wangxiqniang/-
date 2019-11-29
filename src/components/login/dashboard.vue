@@ -4,16 +4,16 @@
 		<el-container>
 			<!-- 左侧 -->
 			<el-aside style="width: -;height: -;">
-				<el-menu default-active="1-3-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse" background-color="#545c64">
-					<el-submenu index="1" v-for="item in list">
+				<el-menu default-active="1-3-1" class="el-menu-vertical-demo"    :collapse="isCollapse" background-color="#545c64" unique-opene>
+					<el-submenu :index="item.id" v-for="item in list"  >
 						<template slot="title">
 							<span slot="title">{{item.name}}</span>
 						</template>
 
 					<!-- 	<el-menu-item index="1-3" v-for="v in item.children">{{v.name}}</el-menu-item> -->
-						 <el-submenu index="1-2" v-for="v in item.children">
+						 <el-submenu index="1-1" v-for="v in item.children">
 						      <span slot="title">{{v.name}}</span>
-						      <el-menu-item index="1-3-1" v-for=" t in v.children">{{t.name}}</el-menu-item>
+						      <el-menu-item index="1-2-1" v-for=" t in v.children">{{t.name}}</el-menu-item>
 						    </el-submenu>
 					</el-submenu>
 				</el-menu>
