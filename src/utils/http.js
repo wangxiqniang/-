@@ -8,9 +8,9 @@ class HTTP {
 				method: params.type,
 				url: config.baseUrl + params.url,
 				data: Qs.stringify(params.data),
-				contentType:'application/json',
 				headers: {
 					token: params.data.token,
+					'content-type': 'application/json'
 				},
 				
 			}).then(res => {

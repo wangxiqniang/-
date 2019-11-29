@@ -16,10 +16,7 @@
           <input type="password" v-model="pass" />
         </div>
         <div class="login1" @click="login">登录</div>
-		<div>5316
-		6
-		26
-		2</div>
+			
       </div>
     </div>
     <section>
@@ -50,7 +47,7 @@ export default {
           stor.set('token',JSON.stringify(d.data.data))
         console.log(d)
         if (d.data.code == 200) {
-            this.$router.push({path:'/login'})
+            this.$router.push({path:'/dashboard'})
         }
 
       })
