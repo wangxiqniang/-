@@ -21,12 +21,12 @@ export default new Router({
 			component: resolve => require(['@/components/login/dashboard.vue'], resolve),
 			children: [{
 				path: '/order/orderInfo',
-				name: 'orderInfo',
+				name: 'ad',
 				component: resolve => require(['../components/order/orderInfo.vue'], resolve),
 			},
 			{
 				path: "/homepage/adv/pc",
-				name: 'advpc',
+				name: 'ad',
 				component: resolve => require(['../components/homepage/advpc.vue'], resolve),
 			},{
 				path: "/homepage/zone/pc",
